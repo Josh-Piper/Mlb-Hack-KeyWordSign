@@ -2,6 +2,7 @@ import { useState } from 'react'
 import firebase from '../../firebase'
 import 'firebase/storage'
 import './_Firebase.scss';
+import PageHeader from '../PageHeader/PageHeader';
 
 function UploadFirebase () {
   const [inputTitle, setInputTitle] = useState('')
@@ -40,7 +41,7 @@ function UploadFirebase () {
 
   return (
     <div className="container">
-      <h1>Upload firebase</h1>
+      <PageHeader title="Upload"/>
 
       <label for='item-title'>Title</label>
       <input type='text' name='item-title' id='item-title' onChange={(event) => setInputTitle(event.target.value)} value={inputTitle} />

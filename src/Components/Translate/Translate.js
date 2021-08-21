@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import firebase from '../firebase'
+import firebase from '../../firebase'
+import PageHeader from '../PageHeader/PageHeader';
+import './_Translate.scss';
 
 function Translate () {
   const [existingKeywords, setExistingKeywords] = useState([])
@@ -31,8 +33,8 @@ function Translate () {
   }
 
   return (
-    <div>
-      <h1>Translate</h1>
+    <div className="container">
+      <PageHeader title="Translate"/>
       <input type='text' onChange={handleChangeWords} />
       <button type='submit'>Go</button>
 

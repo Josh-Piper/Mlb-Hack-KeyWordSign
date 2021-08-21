@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Translate from './Components/Translate'
+import Translate from './Components/Translate/Translate'
 import GetFirebase from './Components/Firebase/GetFirebase'
 import UploadFirebase from './Components/Firebase/UploadFirebase'
 import Navi from './Components/Navi/Navi'
