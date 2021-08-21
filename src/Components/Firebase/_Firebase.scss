@@ -1,0 +1,53 @@
+@import '../../Theme.scss';
+
+.signs {
+	display: flex;
+	flex-wrap: wrap;
+
+	@include screen-above(lg) {
+		margin-left: -(map-get($spacing, 'sm'));
+		margin-right: -(map-get($spacing, 'sm'));
+	}
+
+	&__item {
+		padding: map-get($spacing, 'sm');
+		width: 100%;
+		flex-basis: 100%;
+		max-width: 100%;
+		box-sizing: border-box;
+
+		@include screen-above(sm) {
+			width: 50%;
+			flex-basis: 50%;
+			max-width: 50%;
+		}
+
+		@include screen-above(md) {
+			width: 33.33%;
+			flex-basis: 33.33%;
+			max-width: 33.33%;
+		}
+
+		@include screen-above(lg) {
+			width: 25%;
+			flex-basis: 25%;
+			max-width: 25%;
+		}
+
+		&__inner {
+			padding: map-get($spacing, 'md');
+			box-shadow: 0 0 5px 0 map-get($colors, 'light');
+
+			h2 {
+				display: inline;
+				padding: map-get($spacing, 'sm') map-get($spacing, 'md');
+				margin: 0;
+				font-family: $body-font;
+				background: map-get($colors, 'accent');
+				color: white;
+				position: relative;
+				left: -(map-get($spacing, 'md'));
+			}
+		}
+	}
+}

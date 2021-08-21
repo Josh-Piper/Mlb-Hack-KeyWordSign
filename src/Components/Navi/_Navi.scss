@@ -1,0 +1,62 @@
+@import '../../Theme.scss';
+
+.navi {
+	background: map-get($colors, 'primary');
+
+	.container {
+
+		@include screen-above(md) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-wrap: nowrap;
+		}
+	}
+
+	&__logo,
+	&__menu {
+		flex-shrink: 1;
+		flex-grow: 0;
+		flex-basis: auto;
+	}
+
+	&__logo {
+		font-family: $heading-font;
+		color: white;
+		font-size: 1.5rem;
+		padding: map-get($spacing, 'md');
+
+		@include screen-above(md) {
+			padding: map-get($spacing, 'md') 0;
+		}
+	}
+
+	&__menu {
+		padding: 0;
+		margin: 0;
+
+		@include screen-above(md) {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+		}
+
+		&__item {
+			display: block;
+
+			a {
+				display: block;
+				font-size: map-get($font-sizes, 'md');
+				color: white;
+				padding: map-get($spacing, 'md');
+				transition: $global-transition;
+				text-decoration: none;
+				font-weight: bold;
+
+				&:hover, &:focus, &:active {
+					background: rgba(white, 0.2);
+				}
+			}
+		}
+	}
+}
