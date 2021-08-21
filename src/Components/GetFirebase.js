@@ -9,13 +9,6 @@ function GetFirebase () {
 
   const ref = firebase.firestore().collection('keywords')
 
-  const sayWord = (word) => {
-    // <h1>Hello</h1>;
-    const element = <Speech text={word} />
-    const rootNode = document.getElementById('root')
-    ReactDOM.render(element, rootNode)
-  }
-
   const getKeywords = () => {
     setLoading(true)
     ref.onSnapshot((querySnapshot) => {

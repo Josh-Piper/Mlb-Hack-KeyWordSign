@@ -1,10 +1,12 @@
-import React, { Fragment } from 'react'
-import GetFirebase from './Components/GetFirebase'
-import UploadFirebase from './Components/UploadFirebase'
+import React from 'react'
+import MyRouter from './Router'
 
 function App () {
-  const get = false
-  return <>{get ? <GetFirebase /> : <UploadFirebase />}</>
+  return (
+    <div>
+      <MyRouter />
+    </div>
+  )
 }
 
 export default App
