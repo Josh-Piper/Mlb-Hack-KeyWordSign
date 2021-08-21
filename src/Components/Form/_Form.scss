@@ -1,0 +1,76 @@
+@import '../../Theme.scss';
+
+.form {
+	position: relative;
+	max-width: map-get($breakpoints, 'md');
+	margin: 0 auto;
+
+	.form-row {
+		margin-bottom: map-get($spacing, 'normal');
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	label {
+		width: 100%;
+		flex-basis: 100%;
+	}
+
+	input[type="search"],
+	input[type="text"],
+	input[type="file"]{
+		width: 100%;
+		font-family: $body-font;
+		color: map-get($colors, 'dark');
+		box-sizing: border-box;
+		border: 0;
+		box-shadow: 0 0 0.5rem 0.25rem map-get($colors, 'light');
+
+		&:focus {
+			box-shadow: 0 0 0.5rem 0.25rem rgba(map-get($colors, 'tertiary'), 0.5);
+			outline: none;
+		}
+	}
+
+	input[type="search"] {
+		font-size: map-get($font-sizes, 'lg');
+		padding: map-get($spacing, 'normal');
+	}
+
+	input[type="text"],
+	input[type="file"] {
+		padding: map-get($spacing, 'sm');
+	}
+
+	.iconWrapper {
+		position: absolute;
+		top: 0;
+		right: map-get($spacing, 'sm');
+		bottom: 0;
+		display: flex;
+		align-items: center;
+
+		svg {
+			color: map-get($colors, 'light');
+			font-size: map-get($font-sizes, 'xl');
+
+		}
+	}
+
+	button[type="submit"] {
+		margin-left: auto;
+		padding: map-get($spacing, 'sm') map-get($spacing, 'normal');
+		font-family: $body-font;
+		font-size: map-get($font-sizes, 'normal');
+		border: 0;
+		background: map-get($colors, 'primary');
+		color: white;
+		transition: $global-transition;
+		border-radius: 0.25rem;
+		cursor: pointer;
+
+		&:hover, &:focus, &:active {
+			background: darken(map-get($colors, 'primary'), 10%);
+		}
+	}
+}

@@ -41,5 +41,55 @@
 			position: relative;
 			left: -(map-get($spacing, 'md'));
 		}
+
+		img {
+			display: block;
+			margin: 0 auto;
+		}
+
+		.button-wrap {
+			width: 100%;
+			display: flex;
+			flex-wrap: nowrap;
+			justify-content: center;
+			align-items: center;
+			margin-top: map-get($spacing, 'normal');
+
+			svg {
+				color: map-get($colors, 'primary');
+				font-size: map-get($font-sizes, 'lg');
+				margin-right: map-get($spacing, 'sm');
+			}
+
+			.rs-container {
+				flex-basis: auto;
+				flex-grow: 0;
+				flex-shrink: 1;
+				width: auto !important;
+
+				&:hover, &:focus, &:active {
+					outline: none !important;
+				}
+
+				.rs-play {
+					display: block;
+					border-radius: map-get($spacing, 'sm');
+					background: map-get($colors, 'primary') !important;
+					color: white;
+					padding: map-get($spacing, 'sm') map-get($spacing, 'normal');
+					transition: $global-transition;
+
+					&:hover, &:focus, &:active {
+						background: darken(map-get($colors, 'primary'), 10%) !important;
+						outline: 0 !important;
+					}
+
+					.rs-text {
+						background: transparent;
+						font-family: $body-font;
+					}
+				}
+			}
+		}
 	}
 }

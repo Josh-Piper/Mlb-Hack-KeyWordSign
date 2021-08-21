@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom'
 import React, { useEffect, useState } from 'react'
 import firebase from '../../firebase'
-import Speech from 'react-speech'
 import PageHeader from '../PageHeader/PageHeader';
 import Sign from '../Sign/Sign';
 import './_Firebase.scss';
@@ -29,7 +28,7 @@ function GetFirebase () {
   }, [])
 
   if (loading) {
-    return <h1>Loading...</h1>
+    return <PageHeader title="Loading"/>
   }
 
   return (

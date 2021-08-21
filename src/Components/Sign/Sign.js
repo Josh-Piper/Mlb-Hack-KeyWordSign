@@ -1,6 +1,7 @@
 import './_Sign.scss';
 import Speech from "react-speech";
-import React from "react";
+import React from 'react';
+import { BsFillVolumeUpFill } from 'react-icons/bs';
 
 function Sign(props) {
 
@@ -9,7 +10,10 @@ function Sign(props) {
             <div className="sign__inner">
                 <h2>{props.title}</h2>
                 <img src={props.image} alt={props.title} height='200'/>
-                <Speech text={props.title} textAsButton />
+                <span className="button-wrap">
+                    <BsFillVolumeUpFill/>
+                    <Speech text={props.title} textAsButton />
+                </span>
             </div>
         </div>
     )

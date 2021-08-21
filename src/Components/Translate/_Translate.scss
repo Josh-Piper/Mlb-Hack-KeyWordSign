@@ -1,0 +1,12 @@
+@import '../../Theme.scss';
+
+.signs {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: map-get($spacing, 'normal');
+
+	@include screen-above(lg) {
+		margin-left: -(map-get($spacing, 'sm'));
+		margin-right: -(map-get($spacing, 'sm'));
+	}
+}

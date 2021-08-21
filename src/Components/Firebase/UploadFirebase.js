@@ -2,6 +2,8 @@ import { useState } from 'react'
 import firebase from '../../firebase'
 import 'firebase/storage'
 import './_Firebase.scss';
+import PageHeader from '../PageHeader/PageHeader';
+import Form from '../Form/Form';
 
 function UploadFirebase () {
   const [inputTitle, setInputTitle] = useState('')
@@ -40,28 +42,38 @@ function UploadFirebase () {
 
   return (
     <div className="container">
-      <h1>Upload firebase</h1>
+      <PageHeader title="Upload"/>
 
-      <label for='item-title'>Title</label>
-      <input type='text' name='item-title' id='item-title' onChange={(event) => setInputTitle(event.target.value)} value={inputTitle} />
-      <br />
-      <label for='img'>Select image:</label>
-      <input type='file' name='item-image' id='item-image' accept='image/*' onChange={(event) => { handleImage(event) }} />
+      <Form>
+          <div className="form-row">
+              <label htmlFor='item-title'>Title</label>
+              <input type='text' name='item-title' id='item-title'
+                     onChange={(event) => setInputTitle(event.target.value)}
+                     value={inputTitle}/>
+          </div>
+          <div className="form-row">
+              <label htmlFor='img'>Select image:</label>
+              <input type='file' name='item-image' id='item-image' accept='image/*' onChange={(event) => {
+                  handleImage(event)
+              }}/>
+          </div>
+          <div className="form-row">
+              <button
+                  type='submit' onClick={() => {
+                  const newKeyWord = {
+                      title: inputTitle,
+                      image: inputImage
+                  }
+                  addKeyWord(newKeyWord)
+                  setInputTitle('')
+                  document.getElementById('item-image').value = null
+              }}
+              >
+                  Submit
+              </button>
+          </div>
 
-      <br />
-      <button
-        type='submit' onClick={() => {
-          const newKeyWord = {
-            title: inputTitle,
-            image: inputImage
-          }
-          addKeyWord(newKeyWord)
-          setInputTitle('')
-          document.getElementById('item-image').value = null
-        }}
-      >
-        Submit
-      </button>
+      </Form>
     </div>
   )
 }

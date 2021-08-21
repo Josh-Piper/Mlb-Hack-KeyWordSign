@@ -3,6 +3,11 @@
 .navi {
 	background: map-get($colors, 'primary');
 	box-shadow: 0 0 0.5rem 0.25rem map-get($colors, 'light');
+	padding: map-get($spacing, 'sm') 0;
+
+	@include screen-above(md) {
+		padding: 0;
+	}
 
 	.container {
 
@@ -22,13 +27,14 @@
 	}
 
 	&__logo {
+		display: block;
 		font-family: $heading-font;
 		color: white;
 		font-size: 1.5rem;
-		padding: map-get($spacing, 'md');
+		padding: map-get($spacing, 'sm');
 
-		@include screen-above(md) {
-			padding: map-get($spacing, 'md') 0;
+		@include screen-above(lg) {
+			padding: map-get($spacing, 'sm') 0;
 		}
 	}
 
@@ -47,12 +53,19 @@
 
 			a {
 				display: block;
-				font-size: map-get($font-sizes, 'md');
 				color: white;
-				padding: map-get($spacing, 'md');
+				padding: map-get($spacing, 'sm');
 				transition: $global-transition;
 				text-decoration: none;
 				font-weight: bold;
+
+				@include screen-above(md) {
+					padding: map-get($spacing, 'normal');
+				}
+
+				@include screen-above(lg) {
+					font-size: map-get($font-sizes, 'md');
+				}
 
 				&:hover, &:focus, &:active {
 					background: rgba(white, 0.2);
