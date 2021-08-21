@@ -18,7 +18,13 @@ $font-sizes: (
 	'sm': 0.8rem,
 	'normal': 1rem,
 	'md': 1.25rem,
-	'lg': 2rem
+	'lg': 2rem,
+	'xl': 3rem
+);
+
+$font-weights: (
+	'normal': 300,
+	'bold': 600
 );
 
 $spacing: (
@@ -37,6 +43,11 @@ $breakpoints: (
 	'xl': 1280px,
 	'xxl': 1600px
 );
+
+body {
+	font-family: $body-font;
+	font-weight: 300;
+}
 
 .container {
 	width: 100%;
