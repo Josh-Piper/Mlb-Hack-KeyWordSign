@@ -1,7 +1,8 @@
 import ReactDOM from 'react-dom'
 import React, { useEffect, useState } from 'react'
-import firebase from '../firebase'
+import firebase from '../../firebase'
 import Speech from 'react-speech'
+import './_Firebase.scss';
 
 function GetFirebase () {
   const [signs, setSigns] = useState([])
@@ -30,20 +31,25 @@ function GetFirebase () {
   }
 
   return (
-    <div>
+    <div className="container">
       <h1>Signs</h1>
-      {signs.map((sign) => {
-        return (
-          <div key={sign.title}>
-            <h2>{sign.title}</h2>
-            <img src={sign.image} alt={sign.title} height='200' />
-            <Speech
-              text={sign.title}
-              textAsButton
-            />
-          </div>
-        )
-      })}
+      <div className="signs">
+        {signs.map((sign) => {
+          return (
+              <div className="signs__item" key={sign.title}>
+                <div className="signs__item__inner">
+                  <h2>{sign.title}</h2>
+                  <img src={sign.image} alt={sign.title} height='200' />
+                  <Speech
+                      text={sign.title}
+                      textAsButton
+                  />
+                </div>
+              </div>
+          )
+        })}
+      </div>
+
     </div>
   )
 }

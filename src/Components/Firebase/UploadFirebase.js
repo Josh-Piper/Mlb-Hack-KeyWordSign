@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import firebase from '../firebase'
+import firebase from '../../firebase'
 import 'firebase/storage'
+import './_Firebase.scss';
 
 function UploadFirebase () {
   const [inputTitle, setInputTitle] = useState('')
@@ -38,7 +39,7 @@ function UploadFirebase () {
   }
 
   return (
-    <div>
+    <div className="container">
       <h1>Upload firebase</h1>
 
       <label for='item-title'>Title</label>

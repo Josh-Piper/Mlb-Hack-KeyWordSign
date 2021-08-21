@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:wght@300;600&display=swap');
+
+$heading-font: 'Luckiest Guy', cursive;
+$body-font: 'Poppins', sans-serif;
+$global-transition: all 0.3s ease;
+
+$colors: (
+	'primary': #41b3d8,
+	'secondary': #FBE166,
+	'tertiary': #C08E77,
+	'accent': #D0D95B,
+	'warning': #F5AC77,
+	'dark': #222,
+	'light': #CED1CE
+);
+
+$font-sizes: (
+	'sm': 0.8rem,
+	'normal': 1rem,
+	'md': 1.25rem,
+	'lg': 2rem
+);
+
+$spacing: (
+	'xs': 0.25rem,
+	'sm': 0.5rem,
+	'normal': 1rem,
+	'md': 1.5rem,
+	'lg': 2rem
+);
+
+$breakpoints: (
+	'xs': 320px,
+	'sm': 640px,
+	'md': 768px,
+	'lg': 1024px,
+	'xl': 1280px,
+	'xxl': 1600px
+);
+
+.container {
+	width: 100%;
+	max-width: 80rem;
+	margin: 0 auto;
+	padding: 0 map-get($spacing, 'md');
+	box-sizing: border-box;
+}
+
+@mixin screen-above($breakpoint) {
+	@if not map-has-key($map: $breakpoints, $key: $breakpoint) {
+		@error 'The given breakpoint #{$breakpoint} for @screen-above does not exist.';
+	}
+
+	@media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+		@content;
+	}
+}
+
+@mixin screen-between($lower, $higher) {
+	@if not map-has-key($map: $breakpoints, $key: $lower) {
+		@error 'The given breakpoint #{$lower} ($lower) for @screen-between does not exist.';
+	}
+
+	@if not map-has-key($map: $breakpoints, $key: $higher) {
+		@error 'The given breakpoint #{$higher} ($higher) for @screen-between does not exist.';
+	}
+
+	@media screen and (min-width: map-get($breakpoints, $lower)) and (max-width: map-get($breakpoints, $higher) - 1) {
+		@content;
+	}
+}
+
+@mixin screen-below($breakpoint) {
+	@if not map-has-key($map: $breakpoints, $key: $breakpoint) {
+		@error 'The given breakpoint #{$breakpoint} for @screen-below does not exist.';
+	}
+
+	@media screen and (max-width: map-get($breakpoints, $breakpoint) - 1) {
+		@content;
+	}
+}
