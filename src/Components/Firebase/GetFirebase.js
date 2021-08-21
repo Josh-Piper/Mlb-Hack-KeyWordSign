@@ -2,8 +2,9 @@ import ReactDOM from 'react-dom'
 import React, { useEffect, useState } from 'react'
 import firebase from '../../firebase'
 import Speech from 'react-speech'
-import './_Firebase.scss';
 import PageHeader from '../PageHeader/PageHeader';
+import Sign from '../Sign/Sign';
+import './_Firebase.scss';
 
 function GetFirebase () {
   const [signs, setSigns] = useState([])
@@ -37,16 +38,7 @@ function GetFirebase () {
       <div className="signs">
         {signs.map((sign) => {
           return (
-              <div className="signs__item" key={sign.title}>
-                <div className="signs__item__inner">
-                  <h2>{sign.title}</h2>
-                  <img src={sign.image} alt={sign.title} height='200' />
-                  <Speech
-                      text={sign.title}
-                      textAsButton
-                  />
-                </div>
-              </div>
+            <Sign title={sign.title} image={sign.image} />
           )
         })}
       </div>
