@@ -12,13 +12,13 @@ const About = () => {
           <div className='about_block'>
             <h2>What is keyword sign?</h2>
             <div className='about_block_text'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dolor turpis, aliquet a nulla et, volutpat egestas urna. Cras a enim non dolor vehicula auctor nec eget felis. Quisque quis metus ac erat scelerisque malesuada.
+              Key Word Sign is a communication technique to allow children and others to reinforce meaning through AusLan sign language. Only 'key' words are utilised such as 'more' to help adults understand children.
             </div>
           </div>
           <div className='about_block'>
             <h2>Who is this for?</h2>
             <div className='about_block_text'>
-              #TODO: list styling? Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dolor turpis, aliquet a nulla et, volutpat egestas urna. Cras a enim non dolor vehicula auctor nec eget felis.
+              The application is design as an Augmentative and Alternative Communication program to help children and adults communicate with eachother. For example, most adults do not know Key Word Sign nor AusLan, thus, they can open the application for clarification.
             </div>
           </div>
 
@@ -29,7 +29,7 @@ const About = () => {
                 <iframe src='https://www.youtube.com/embed/S3ZX1KV7IHY' title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowFullScreen />
               </div>
               <div className='resources_block_text'>
-                #TODO: list styling, find further links or make video fullsize
+                Libby Brownlie a speech pathologist brought Key Word Sign to Australia. Learn more by watching this video!
               </div>
             </div>
           </div>
