@@ -2,8 +2,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Translate from './Components/Translate'
 import GetFirebase from './Components/Firebase/GetFirebase'
 import UploadFirebase from './Components/Firebase/UploadFirebase'
-import About from './Components/About/About'
 import Navi from './Components/Navi/Navi'
+import About from './Components/About/About'
 
 const MyRouter = () => {
   return (
