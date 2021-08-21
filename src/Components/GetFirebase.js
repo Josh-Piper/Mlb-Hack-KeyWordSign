@@ -40,13 +40,17 @@ if (loading) {
 return (
   <div>
     <h1>Signs</h1>
-    {signs.map((sign) => (
+    {signs.map((sign) => { 
+      return (
       <div key={sign.title}>
         <h2>{sign.title}</h2>
         <img src={sign.image} alt={sign.title} height="200"/>
-        <Speech text={sign.title} textAsButton />
+        <Speech
+            text={sign.title}
+            textAsButton={true}
+        />
       </div>
-    ))}
+    )})}
   </div>
   );
 }
