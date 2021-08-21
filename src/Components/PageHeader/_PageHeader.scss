@@ -1,0 +1,18 @@
+@import '../../Theme.scss';
+
+.page-header {
+	padding-top: map-get($spacing, 'lg');
+	padding-bottom: map-get($spacing, 'md');
+	text-align: center;
+
+	h1 {
+		font-family: $heading-font;
+		font-size: map-get($font-sizes, 'lg');
+		color: map-get($colors, 'tertiary');
+		margin: 0;
+
+		@include screen-above('lg') {
+			font-size: map-get($font-sizes, 'xl');
+		}
+	}
+}

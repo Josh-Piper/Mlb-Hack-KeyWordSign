@@ -1,10 +1,9 @@
+import PageHeader from '../PageHeader/PageHeader';
 import './_About.scss';
 
 function About () {
   return (
-    <div className="container">
-      <h1> About </h1>
-    </div>
+      <PageHeader title="About"/>
   )
 }
 

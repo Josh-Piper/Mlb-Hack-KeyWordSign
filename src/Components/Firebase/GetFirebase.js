@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import firebase from '../../firebase'
 import Speech from 'react-speech'
 import './_Firebase.scss';
+import PageHeader from '../PageHeader/PageHeader';
 
 function GetFirebase () {
   const [signs, setSigns] = useState([])
@@ -32,7 +33,7 @@ function GetFirebase () {
 
   return (
     <div className="container">
-      <h1>Signs</h1>
+      <PageHeader title="Signs"/>
       <div className="signs">
         {signs.map((sign) => {
           return (
