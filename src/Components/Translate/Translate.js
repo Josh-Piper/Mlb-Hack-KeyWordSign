@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import firebase from '../../firebase'
 import PageHeader from '../PageHeader/PageHeader';
 import './_Translate.scss';
+import Sign from "../Sign/Sign";
 
 function Translate () {
   const [existingKeywords, setExistingKeywords] = useState([])
@@ -43,10 +44,7 @@ function Translate () {
         console.log(foundWord)
         if (foundWord) {
           return (
-            <div>
-              <h1>{foundWord.title}</h1>
-              <img src={foundWord.image} alt={foundWord.title} height='200' />
-            </div>
+            <Sign title={foundWord.title} image={foundWord.image} />
           )
         }
       })}
