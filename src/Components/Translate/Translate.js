@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import firebase from '../../firebase'
 import PageHeader from '../PageHeader/PageHeader';
+import Form from '../Form/Form';
+import Sign from '../Sign/Sign';
+import {IoSearchOutline} from "react-icons/all";
 import './_Translate.scss';
-import Sign from "../Sign/Sign";
 
 function Translate () {
   const [existingKeywords, setExistingKeywords] = useState([])
@@ -35,19 +37,27 @@ function Translate () {
 
   return (
     <div className="container">
-      <PageHeader title="Translate"/>
-      <input type='text' onChange={handleChangeWords} />
-      <button type='submit'>Go</button>
 
-      {words.map((keyWord) => {
-        const foundWord = getWord(keyWord)
-        console.log(foundWord)
-        if (foundWord) {
-          return (
-            <Sign title={foundWord.title} image={foundWord.image} />
-          )
-        }
-      })}
+      <PageHeader title="Translate"/>
+
+      <Form>
+        <input type='search' onChange={handleChangeWords} />
+        <span className="iconWrapper">
+          <IoSearchOutline/>
+        </span>
+      </Form>
+
+      <div className="signs">
+        {words.map((keyWord) => {
+          const foundWord = getWord(keyWord)
+          console.log(foundWord)
+          if (foundWord) {
+            return (
+              <Sign title={foundWord.title} image={foundWord.image} />
+            )
+          }
+        })}
+      </div>
     </div>
   )
 }
