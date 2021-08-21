@@ -1,17 +1,16 @@
-import ReactDOM from 'react-dom'
 import React, { useEffect, useState } from 'react'
 import firebase from '../../firebase'
-import PageHeader from '../PageHeader/PageHeader';
-import Sign from '../Sign/Sign';
-import './_Firebase.scss';
+import PageHeader from '../PageHeader/PageHeader'
+import Sign from '../Sign/Sign'
+import './_Firebase.scss'
 
-function GetFirebase () {
+const GetFirebase = () => {
   const [signs, setSigns] = useState([])
   const [loading, setLoading] = useState(false)
 
-  const ref = firebase.firestore().collection('keywords')
+  useEffect(() => {
+    const ref = firebase.firestore().collection('keywords')
 
-  const getKeywords = () => {
     setLoading(true)
     ref.onSnapshot((querySnapshot) => {
       const items = []
@@ -21,23 +20,19 @@ function GetFirebase () {
       setSigns(items)
       setLoading(false)
     })
-  }
-
-  useEffect(() => {
-    getKeywords()
   }, [])
 
   if (loading) {
-    return <PageHeader title="Loading"/>
+    return <PageHeader title='Loading' />
   }
 
   return (
-    <div className="container">
-      <PageHeader title="Signs"/>
-      <div className="signs">
+    <div className='container'>
+      <PageHeader title='Signs' />
+      <div className='signs'>
         {signs.map((sign) => {
           return (
-            <Sign title={sign.title} image={sign.image} />
+            <Sign key={sign.title} title={sign.title} image={sign.image} />
           )
         })}
       </div>

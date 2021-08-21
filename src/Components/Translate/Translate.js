@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react'
+import { IoSearchOutline } from 'react-icons/all'
+import PageHeader from '../PageHeader/PageHeader'
 import firebase from '../../firebase'
-import PageHeader from '../PageHeader/PageHeader';
-import Form from '../Form/Form';
-import Sign from '../Sign/Sign';
-import {IoSearchOutline} from "react-icons/all";
-import './_Translate.scss';
+import Form from '../Form/Form'
+import Sign from '../Sign/Sign'
+import './_Translate.scss'
 
-function Translate () {
+const Translate = () => {
   const [existingKeywords, setExistingKeywords] = useState([])
   const [words, setWords] = useState([])
 
-  const ref = firebase.firestore().collection('keywords')
+  useEffect(() => {
+    const ref = firebase.firestore().collection('keywords')
 
-  const getKeywords = () => {
     ref.onSnapshot((querySnapshot) => {
       const items = []
       querySnapshot.forEach((doc) => {
@@ -20,10 +20,6 @@ function Translate () {
       })
       setExistingKeywords(items)
     })
-  }
-
-  useEffect(() => {
-    getKeywords()
   }, [])
 
   const getWord = (word) => {
@@ -36,25 +32,25 @@ function Translate () {
   }
 
   return (
-    <div className="container">
+    <div className='container'>
 
-      <PageHeader title="Translate"/>
+      <PageHeader title='Translate' />
 
       <Form>
         <input type='search' onChange={handleChangeWords} />
-        <span className="iconWrapper">
-          <IoSearchOutline/>
+        <span className='iconWrapper'>
+          <IoSearchOutline />
         </span>
       </Form>
 
-      <div className="signs">
+      <div className='signs'>
         {words.map((keyWord) => {
           const foundWord = getWord(keyWord)
-          console.log(foundWord)
+
           if (foundWord) {
-            return (
-              <Sign title={foundWord.title} image={foundWord.image} />
-            )
+            return (<Sign title={foundWord.title} image={foundWord.image} />)
+          } else {
+            return <></>
           }
         })}
       </div>

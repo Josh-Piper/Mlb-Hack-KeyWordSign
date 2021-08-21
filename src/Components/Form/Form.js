@@ -1,12 +1,11 @@
-import './_Form.scss';
+import './_Form.scss'
 
-function Form(props) {
-
-    return (
-        <div className="form">
-            {props.children}
-        </div>
-    );
+const Form = (props) => {
+  return (
+    <div className='form'>
+      {props.children}
+    </div>
+  )
 }
 
-export default Form;
+export default Form
