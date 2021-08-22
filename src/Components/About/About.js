@@ -12,13 +12,13 @@ const About = () => {
           <div className='about_block'>
             <h2>What is keyword sign?</h2>
             <div className='about_block_text'>
-              Key Word Sign is a communication technique to allow children and others to reinforce meaning through AusLan sign language. Only 'key' words are used, such as 'more', to help adults understand children.
+              Key Word Sign is a communication technique to assist children and others to reinforce meaning through AusLan sign language. Only 'key' words are used, such as 'more', to help adults understand children.
             </div>
           </div>
           <div className='about_block'>
             <h2>Who is this for?</h2>
             <div className='about_block_text'>
-              This application is an Augmentative and Alternative Communication tool to help children and adults communicate with each other. Many adults may not know Key Word Sign nor AusLan, in which case they can open Keyword Sign AAC for clarification.
+              This application is an Augmentative and Alternative Communication tool that allows children and adults communicate with each other. Many adults may not know Key Word Sign nor AusLan, in which case they can open Keyword Sign AAC for clarification.
             </div>
           </div>
 
