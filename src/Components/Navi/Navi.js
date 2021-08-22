@@ -6,7 +6,7 @@ const Navi = () => {
     <nav className='navi'>
       <div className='container'>
         <span className='navi__logo'>
-          KeyWordSign
+          Keyword Sign AAC
         </span>
         <ul className='navi__menu'>
           <li className='navi__menu__item'><Link to='/'>About</Link></li>
